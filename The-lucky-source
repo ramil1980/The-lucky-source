@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main()
+{
+	int x,x1,y,i,i1,sum;
+	for (x1 = 0; x1 < 1000; x1++)
+	{
+		sum = 0;
+		x = x1;
+		for (i1 = 0; i1 < 1000;i1++) 
+		{
+			i = 1000;
+			while (i != 1)
+			{
+				y = (x % i) / (i / 10);
+				sum += y * y;
+				i /=10;
+			}
+			if (sum == 1)
+			{
+				
+				printf("! ! ! ! ! We found a lucky number and this number %i  ! ! ! ! ! ! ! \n", x1);
+				
+				break;
+			}
+			x = sum;
+			sum = 0;
+		}
+	}
+}
